@@ -1,0 +1,6 @@
+namespace Drone.NavigationApi.Areas.HelpPage.ModelDescriptions
+{
+    public class SimpleTypeModelDescription : ModelDescription
+    {
+    }
+}

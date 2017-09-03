@@ -1,0 +1,6 @@
+﻿@model List<Drone.Model.DroneOutputModel>
+
+@foreach (var output in Model)
+{
+    <p>@output.Heading @output.PositionX @output.PositionY</p>
+}

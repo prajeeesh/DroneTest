@@ -1,0 +1,62 @@
+﻿@model List<Drone.Model.DroneOutputModel>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="row">
+    <div class="roundcorner1">
+        <h4>Instructions</h4>
+        <p>
+            The first line of input is the upper-right coordinates of the battlefield
+
+            Each drone has two lines of input;Drone's position and instructions
+        </p>
+        Example :
+        5 5   (Upper right coordinates)
+        1 2 N (Drones position )
+        LMLMLMLMM (Locations to explore)
+
+
+    </div>
+    <div class="row">
+        <form id="droneInput" method="post" onsubmit="return validateInput();">
+            <div class="roundcorner">
+                <p>INPUT</p>
+                
+                @Html.TextArea("DroneInputModel", new { rows = 10, columns = 20 })
+                <div><input type="submit" value="Execute" id="btnExecute" /></div><span></span>
+                @*<div>
+                    <button name="Execute" class="btn-primary" id="btnExecute" data-submiturl="/Home/_DroneOutput">Execute</button>
+                </div>*@
+                   <span></span>
+            </div>
+
+        
+           
+        </form>
+    </div>
+    <div id="droneoutput" style="clear:both">
+        <p>OUTPUT</p>
+        @if (Model !=null)
+        {
+            foreach (var output in Model)
+            {
+                <p>@output.PositionX @output.PositionY @output.Heading</p>
+            }
+        }
+    </div>
+</div> 
+@*<script>
+   $( "form" ).submit(function( event ) {
+       var o = {};
+       $($('textarea').val().split(/\n|\r/)).each(function (i) {
+           o[i] = this;
+       });
+       var gridsize = o[0];
+       if (gridsize.length != 3)
+       {
+           $("span").text("Not valid!").show().fadeOut(1000);
+       }
+  event.preventDefault();
+});
+</script>*@
