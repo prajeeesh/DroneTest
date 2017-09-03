@@ -11,16 +11,21 @@
 *.userprefs
 
 # Build results
-[Dd]ebug/
+debug/
+Debug/
 [Dd]ebugPublic/
-[Rr]elease/
+release/
+Release/
 [Rr]eleases/
 x64/
 x86/
+build/
+Build/
 bld/
-[Bb]in/
-[Oo]bj/
-[Ll]og/
+bin/
+Bin/
+obj/
+Obj/
 
 # Visual Studio 2015 cache/options directory
 .vs/
